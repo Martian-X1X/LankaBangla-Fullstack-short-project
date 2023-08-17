@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+:root {
+  --bg-color-r: 255;
+  --bg-color-g: 255;
+  --bg-color-b: 255;
+}
+
+body {
+  margin: 0;
+}
+
+use:nth-child(1) {
+  fill: rgba(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b), 0.7);
+  x: 48;
+  y: 0;
+}
+
+use:nth-child(2) {
+  fill: rgba(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b), 0.5);
+  x: 48;
+  y: 3;
+}
+
+use:nth-child(3) {
+  fill: rgba(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b), 0.3);
+  x: 48;
+  y: 5;
+}
+
+use:nth-child(4) {
+  fill: rgba(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b), 1);
+  x: 48;
+  y: 7;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+  font-family: "Cabin", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  z-index: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 3;
+  font-size: 24px;
+}
+
+/* Add custom styles for the "sign up" button */
+.navbar-item.signup {
+  background-color: yellow; /* Change this to the desired background color */
+  border-radius: 15px;
+}
+
+/* Styling for the link */
+.navbar-item.signup a {
+  text-decoration: none;
+  color: black; /* Change this to the desired text color */
+  font-weight: bold;
+}
+
+/* Hover effect for the link inside the list item */
+.navbar-item.signup a:hover {
+  background-color: green; /* Change this to the desired hover color */
+  color: white;/* You can also change the text color on hover if you like */
+  border-radius: 15px;
+}
+
+
+
+
+.navbar-item {
+  margin-right: -90px; /* Adjust this value to control the gap between each menu item */
+  font-size: 1rem; /* Change this value to adjust the text size */
+}
+
+
+.navbar-item:nth-child(2) {
+  margin-right: -120px;
+  margin-left: -100px; /* Adjust this value to decrease the gap */
+}
+
+.navbar {
+  position: relative;
+  text-align: left;
+  background: linear-gradient(
+    60deg,
+    rgba(4, 100, 3, 1) 0%,
+    rgba(0, 152, 81, 1) 100%
+  );
+  color: black;
+  z-index: 2;
+  margin-bottom: 0;
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 190, 55, 1) 0%,
+    rgba(1, 209, 100, 1) 100%
+  );
+  opacity: 0;
+  transition: 1s;
+  overflow: hidden;
+}
+
+.navbar:hover::before {
+  opacity: 1;
+  transition: 1s;
+}
+
+.navbar-item::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar-item:hover::before {
+  transform: scaleX(1);
+}
+
+.navbar-item {
+  position: relative;
+}
+/* CSS */
+.navbar-item a {
+  color: #FFBF00; /* Set the default color for the links */
+  text-decoration: none; /* Remove underlines from the links */
+}
+
+.navbar-item a:hover {
+  color: #ff0000; /* Set the color when hovering over the links */
+}
+
+
+
+.logo {
+  width: 50px;
+  fill: white;
+  padding-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navbar-items {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+
+
+.flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+  li {
+    font-size: 16px;
+  }
+}
+
+
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo {
+  width: 200px;
+  fill: white;
+  display: inline-block;
+  vertical-align: middle;
+}
+.container {
+  max-width: 80%; 
+  margin: 0 auto;
+  height: 300px;
+}
+
+
+
+.image-banner {
+  position: relative;
+  display: flex;
+  text-align: center;
+  overflow: hidden;
+}
+
+.image-banner img {
+  width: auto;
+  height: 300px;
+  flex: 1;
+}
+
+.banner-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.banner-text h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  color: green;
+}
+
+.banner-text p {
+  font-size: 2rem;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 80%; /* Adjust this value to control the container's width */
+  height: auto; /* Let the container adjust its height based on content */
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #B4FF5B;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+/* Headings */
+h1, h2 {
+  color: #27ae60;
+  margin-top: 0;
+}
+
+/* Bulletpoints */
+.bullet-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.bullet-point {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.bullet-point:before {
+  content: "•";
+  color: #e67e22;
+  font-size: 30px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+/* Spacing */
+.container:not(:first-child) {
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+}
+
